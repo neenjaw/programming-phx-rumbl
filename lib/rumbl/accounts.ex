@@ -26,9 +26,22 @@ defmodule Rumbl.Accounts do
     User.changeset(user, %{})
   end
 
+  # This is for user creation methods that do not require passwords
+  # eg. oauth
   def create_user(attrs \\ %{}) do
     %User{}
     |> User.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  # This is for creating users with passwords
+  def change_registration(%User{} = user, params) do
+    User.registration_changeset(user, params)
+  end
+
+  def register_user(attrs \\ %{}) do
+    %User{}
+    |> User.registration_changeset(attrs)
     |> Repo.insert()
   end
 end
