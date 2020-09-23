@@ -20,3 +20,6 @@ config :rumbl, RumblWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# When testing, use less rounds of encryption to speed things up
+config :pbkdf2_elixir, :rounds, 1
