@@ -12,7 +12,7 @@ defmodule RumblWeb.SessionController do
     case Rumbl.Accounts.authenticate_by_username_and_pw(username, given_pw) do
       {:ok, user} ->
         conn
-        |> RumblWeb.AuthController.login(user)
+        |> RumblWeb.Authentication.login(user)
         |> put_flash(:info, "Welcome back!")
         |> redirect(to: Routes.page_path(conn, :index))
 
@@ -25,7 +25,7 @@ defmodule RumblWeb.SessionController do
 
   def delete(conn, _) do
     conn
-    |> RumblWeb.AuthController.logout()
+    |> RumblWeb.Authentication.logout()
     |> redirect(to: Routes.page_path(conn, :index))
   end
 end
