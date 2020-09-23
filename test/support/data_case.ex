@@ -23,7 +23,9 @@ defmodule Rumbl.DataCase do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
+
       import Rumbl.DataCase
+      import Rumbl.TestHelpers
     end
   end
 
