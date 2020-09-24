@@ -25,7 +25,7 @@ const Player = {
   onPlayerStateChange(event) {},
 
   getCurrentTime() {
-    return Math.floor(this.player.getCurrentTime * 1000);
+    return Math.floor(this.player.getCurrentTime() * 1000);
   },
 
   seekTo(milliseconds) {

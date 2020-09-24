@@ -8,7 +8,7 @@
 
   <div class="column annotations">
     <h3>Annotations</h3>
-    <div class="msg-container"></div>
+    <div id="msg-container"></div>
     <div>
       <textarea id="msg-input" rows="3" placeholder="Comment..."></textarea>
       <button id="msg-submit" class="button column" type="submit">Post</button>
